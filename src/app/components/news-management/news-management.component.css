@@ -1,0 +1,22 @@
+.page-content{
+    background-color: rgb(225, 238, 242);
+    height: 100%;
+}
+
+
+  .bottom-right {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: 242px;
+    text-align: end;
+  }
+  img{
+    width: 100%;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+  }
+
+  .mb6{
+    margin-bottom: 6rem;
+  }

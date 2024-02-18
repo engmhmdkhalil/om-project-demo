@@ -1,0 +1,22 @@
+.page-content{
+    background-color: rgb(225, 238, 242);
+    height: 100vh;
+}
+
+.mt100{
+    margin-top: 100px;
+}
+.card-hover :hover{
+background-color: #a1dfe7;
+font-weight: bold;
+}
+
+input[type="text"]:-moz-placeholder {
+    text-align: right;
+}
+input[type="text"]:-ms-input-placeholder {
+    text-align: right;
+}
+input[type="text"]::-webkit-input-placeholder {
+    text-align: right;
+}

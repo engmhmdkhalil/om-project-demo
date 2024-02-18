@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+<div class="page-content">
+    <div class="container">
+
+        <h3 class="text-center pt-5">إدارة الأخبار</h3>
+    
+        <div class="text-end">
+            <button class="btn btn-success px-5 py-2" id="addNews" data-bs-toggle="modal"
+            data-bs-target="#newsModal" (click)="openAddNewsModal()">إضافة خبر</button>
+        </div>
+        
+        <div class="d-flex col-12 mx-1 flex-wrap justify-content-around p-5">
+
+                <div class=" shadow col-3 mx-1 mb6 border-0 rounded news-contanier"  *ngFor="let news of newsList; index as i">
+                    <div class="card w-100 h-100">
+                        <img src="{{news.imgSrc}}" style="height: 70%;" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            
+                            <div class="bottom-right">{{news.newsTilte}}</div>
+                          </div>
+        
+                    </div>
+    
+                    <div class="d-flex col-12 justify-content-end mt-3">
+                        <button class="btn btn-secondary col-3 me-2" data-bs-toggle="modal"
+                        data-bs-target="#newsReviewModal" (click)="previewNews(i)">معاينة</button>
+                        <button class="btn btn-danger col-3 me-2" (click)="deleteNews(i)">حذف</button>
+                        <button class="btn btn-success col-3 me-2" (click)="openEditNews(i)">تعديل</button>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class=" text-center mt-5">
+                <h5 *ngIf="editNewsMood" class=" text-center" id="newsModalLabel">تعديل الخبر</h5>
+                <h5 *ngIf="!editNewsMood" class=" text-center" id="newsModalLabel">إنشاء خبر</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="newsModalName" class="form-label">العنوان</label>
+                        <input type="text" [(ngModel)]="newsName" name="newsName" class="form-control" id="newsModalName" aria-describedby="newsModalNameHelp">
+                    </div>
+                    <div class=" mb-3 rtl">
+                        <label for="newsModalContent" class="form-label">الملخص</label>
+                        <textarea class="form-control" [(ngModel)]="newsSummary" name="newsSummary" id="newsModalContent" style="height: 50px"></textarea>
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="newsModalContent" class="form-label">المحتوى</label>
+                        <textarea class="form-control" name="newsContent" [(ngModel)]="newsContent" id="newsModalBody" style="height: 100px"></textarea>
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="newsModalContent" class="form-label">الصورة الرئيسية</label>
+                        <input type="file" name="" id="main-img" (blur)="getImgName($event)" class="form-control" id="">
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="newsModalContent" class="form-label">الصور والملفات</label>
+                        <input type="file" name="" id="files" class="form-control" id="" multiple>
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button *ngIf="!editNewsMood" type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 " data-bs-dismiss="modal" (click)="addNewNews()">إنشاء</button>
+                        <button *ngIf="editNewsMood" type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 " (click)="editNews()" data-bs-dismiss="modal">تعديل</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newsReviewModal" tabindex="-1" aria-labelledby="newsReviewModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+            <div class="modal-body">
+                <h4 class="text-center">{{newsName}}</h4>
+
+                <div class="rtl mt-4">{{newsSummary}}</div>
+                <div class="rtl mt-4">{{newsContent}}</div>
+                <div class="text-center mt-4">
+                    <img src="{{mainImgName}}" alt="" srcset="">
+                </div>
+
+                
+            </div>
+
+        </div>
+    </div>
+</div>

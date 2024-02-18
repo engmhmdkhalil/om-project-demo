@@ -1,0 +1,353 @@
+<app-navbar></app-navbar>
+<div class="page-content">
+
+    <div class="container ">
+        <div class="d-flex col-12 flex-wrap justify-content-evenly p-5">
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" data-bs-toggle="modal"
+                    data-bs-target="#announcementModal">
+                    <img src="assets/icons/promotion.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">الإعلانات</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" data-bs-toggle="modal"
+                data-bs-target="#eventModal">
+                <img src="assets/icons/event.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">الأحداث</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded"  role="button" routerLink="/news-managment">
+                <img src="assets/icons/news.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">الأخبار</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" data-bs-toggle="modal"
+                data-bs-target="#filesModal">
+                <img src="assets/icons/file.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">ملفات وصور</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" data-bs-toggle="modal"
+                data-bs-target="#surveyModal">
+                <img src="assets/icons/survey.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">الدراسات الإستقصائية</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" data-bs-toggle="modal"
+                data-bs-target="#pollModal">
+                <img src="assets/icons/poll.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center " role="button">
+                        <h5 class="card-title">إستطلاع الأراء</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 mx-1 mb-5 card-hover">
+                <div class="card shadow col-12 border-0 rounded" role="button" routerLink="/statistics">
+                <img src="assets/icons/pie-chart.png" style="width: 5rem;" class="card-img-top d-block mx-auto mt-4" alt="...">
+
+                    <div class="card-body text-center " role="button">
+                        <h5 class="card-title">الإحصائيات</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="text-center mt-5">
+                <h5 class="text-center" id="announcementModalLabel">إنشاء إعلان</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="announcementName" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="announcementName" aria-describedby="announcementNameHelp">
+                    </div>
+                    <div class=" mb-3 rtl">
+                        <label for="announcementContent" class="form-label">الملخص</label>
+                        <textarea class="form-control" id="announcementContent" style="height: 50px"></textarea>
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="announcementContent" class="form-label">المحتوى</label>
+                        <textarea class="form-control" id="announcementContent" style="height: 100px"></textarea>
+                      </div>
+
+                      <div class="mb-3 rtl w-100 d-flex justify-content-center">
+                          <div class=" ms-1 col-6 ">
+                            <label for="announcementContent" class="form-label">تاريخ البدء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                          <div class=" col-6">
+                            <label for="announcementContent" class="form-label">تاريخ الإنتهاء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="announcementContent" class="form-label">الصور والملفات</label>
+                        <input type="file" name="" class="form-control" id="" multiple>
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 ">إنشاء</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class=" text-center mt-5">
+                <h5 class=" text-center" id="eventModalLabel">إنشاء حدث</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="eventModalName" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="eventModalName" aria-describedby="eventModalNameHelp">
+                    </div>
+                    <div class=" mb-3 rtl">
+                        <label for="eventModalContent" class="form-label">الملخص</label>
+                        <textarea class="form-control" id="eventModalContent" style="height: 50px"></textarea>
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="eventModalContent" class="form-label">المحتوى</label>
+                        <textarea class="form-control" id="eventModalContent" style="height: 100px"></textarea>
+                      </div>
+
+                      <div class="mb-3 rtl w-100 d-flex justify-content-center">
+                          <div class=" ms-1 col-6 ">
+                            <label for="eventModalContent" class="form-label">تاريخ البدء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                          <div class=" col-6">
+                            <label for="eventModalContent" class="form-label">تاريخ الإنتهاء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                      </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="eventModalContent" class="form-label">الصور والملفات</label>
+                        <input type="file" name="" class="form-control" id="" multiple>
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 ">إنشاء</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="pollModal" tabindex="-1" aria-labelledby="pollModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class=" text-center mt-5">
+                <h5 class=" text-center" id="pollModalLabel">إنشاء إستطلاع رأى</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="pollModalName" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="pollModalName" aria-describedby="pollModalNameHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pollModalName" class="form-label">الإختيارات</label>
+                        <div class="d-flex col-12">
+                            <input type="text" class="form-control" id="pollOptions" aria-describedby="" #pollValue>
+                            <button class="btn btn-primary col me-2" (click)="addOptions(pollValue.value,'poll')">إضافة</button>
+                        </div>
+
+                        <ng-container  *ngIf="pollValues?.length > 0">
+                            <div class="d-flex col-12 mt-2" *ngFor="let currentValue of pollValues; index as i">
+                                <input type="text" class="form-control" id="" value="{{currentValue}}" aria-describedby="" disabled>
+                                <button class="btn btn-danger col me-2" (click)="deletePollOption(i, 'poll')">حذف</button>
+                            </div>
+                        </ng-container>
+                    </div>
+
+
+                      <div class="mb-3 rtl w-100 d-flex justify-content-center">
+                          <div class=" ms-1 col-6 ">
+                            <label for="pollModalContent" class="form-label">تاريخ البدء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                          <div class=" col-6">
+                            <label for="pollModalContent" class="form-label">تاريخ الإنتهاء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 ">إنشاء</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="surveyModal" tabindex="-1" aria-labelledby="surveyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class=" text-center mt-5">
+                <h5 class=" text-center" id="surveyModalLabel">إنشاء دراسة إستقصائية</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="surveyModalName" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="surveyModalName" aria-describedby="surveyModalNameHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="surveyModalName" class="form-label">الإختيارات</label>
+                        <div class="d-flex col-12">
+                            <input type="text" class="form-control" id="pollOptions" aria-describedby="" #pollValue>
+                            <button class="btn btn-primary col me-2" (click)="addOptions(pollValue.value,'survey')">إضافة</button>
+                        </div>
+
+                        <ng-container  *ngIf="pollValues?.length > 0">
+                            <div class="d-flex col-12 mt-2" *ngFor="let currentValue of pollValues; index as i">
+                                <input type="text" class="form-control" id="" value="{{currentValue}}" aria-describedby="" disabled>
+                                <button class="btn btn-danger col me-2" (click)="deletePollOption(i, 'survey')">حذف</button>
+                            </div>
+                        </ng-container>
+                    </div>
+
+
+                      <div class="mb-3 rtl w-100 d-flex justify-content-center">
+                          <div class=" ms-1 col-6 ">
+                            <label for="surveyModalContent" class="form-label">تاريخ البدء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                          <div class=" col-6">
+                            <label for="surveyModalContent" class="form-label">تاريخ الإنتهاء</label>
+                            <input type="date" class="form-control" name="" id="">
+                          </div>
+
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 ">إنشاء</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="filesModal" tabindex="-1" aria-labelledby="filesModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class=" text-center mt-5">
+                <h5 class=" text-center" id="filesModalLabel">رفع ملفات وصور</h5>
+            </div>
+            <div class="modal-body">
+
+                <form class="rtl">
+                    <div class="mb-3">
+                        <label for="filesModalName" class="form-label">الإسم</label>
+                        <input type="text" class="form-control" id="filesModalName" aria-describedby="filesModalNameHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="filesModalName" class="form-label">كلمات البحث</label>
+                        <input placeholder="مثال: الكلمة الاولى,الكلمة الثانيه" type="text" class="form-control" id="filesModalName" aria-describedby="filesModalNameHelp">
+                    </div>
+
+                      <div class=" mb-3 rtl">
+                        <label for="filesModalContent" class="form-label">إختيار</label>
+                        <input type="file" name="" class="form-control" id="">
+                      </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-success rounded-pill col-3  p-2 ">إنشاء</button>
+                        <button type="button" class="btn btn-outline-danger rounded-pill col-3 me-2"
+                            data-bs-dismiss="modal">إغلاق</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
